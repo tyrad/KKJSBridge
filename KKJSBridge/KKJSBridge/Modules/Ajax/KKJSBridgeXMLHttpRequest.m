@@ -186,7 +186,7 @@ static NSString * const KKJSBridgeXMLHttpRequestStatusTextOK = @"OK";
     }
     
     KKJS_LOCK(_lock);
-    if (actualData) {
+    if (actualData && ([self.request.HTTPMethod isEqualToString:@"GET"] == NO)) {
         self.request.HTTPBody = actualData;
     }
     
